@@ -1,0 +1,21 @@
+.intro {
+  display: grid;
+  place-items: center;
+  place-content: center;
+  height: 100%;
+}
+
+.logo {
+  width: 100px;
+}
+
+.h1 {
+  color: var(--color-primary);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.h2 {
+  color: var(--color-secondary);
+  font-size: 1rem;
+}
