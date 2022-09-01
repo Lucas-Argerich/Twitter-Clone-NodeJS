@@ -1,6 +1,6 @@
 .wrapper {
-  height: 100vh;
   display: grid;
+  height: 100vh;
   place-items: center;
 }
 
@@ -12,8 +12,8 @@
   width: 100%;
 }
 
-@media (min-width: 520px){
-  .main{
+@media (min-width: 520px) {
+  .main {
     height: 90vh;
     width: 520px;
   }
