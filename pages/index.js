@@ -8,7 +8,7 @@ export default function Home() {
         TwiThor
       </h1>
       <h2 className={styles.h2}>
-        Where to talk with real vikings
+        Where the real vikings talk
       </h2>
     </section>
   )
