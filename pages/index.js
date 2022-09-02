@@ -17,34 +17,33 @@ export default function Home() {
   }, [user])
 
   const handleGitHubLogin = () => {
-    loginWithGitHub().then(user => {
-      setUser(user)
-    }).catch(err => {
-      console.log(err)
-    })
+    loginWithGitHub()
+      .then((user) => {
+        setUser(user)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
   return (
     <section className={styles.intro}>
-      <img className={styles.logo} src='/twithor-logo.png' alt='Twithor app logo' />
-      <h1 className={styles.h1}>
-        TwiThor
-      </h1>
-      <h2 className={styles.h2}>
-        Where the real vikings talk
-      </h2>
-      {
-        user === null &&
-        <Button onClick={handleGitHubLogin}>Login with GitHub
+      <img
+        className={styles.logo}
+        src="/twithor-logo.png"
+        alt="Twithor app logo"
+      />
+      <h1 className={styles.h1}>TwiThor</h1>
+      <h2 className={styles.h2}>Where the real vikings talk</h2>
+      {user === null && (
+        <Button onClick={handleGitHubLogin}>
+          Login with GitHub
           <GitHubIcon />
         </Button>
-      }
-      {
-        user != undefined && user != null &&
-        <h3>
-          Welcome, {user.displayName || "User"}
-        </h3>
-      }
+      )}
+      {user !== undefined && user !== null && (
+        <h3>Welcome, {user.displayName || 'User'}</h3>
+      )}
     </section>
   )
 }
