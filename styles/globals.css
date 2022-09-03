@@ -4,6 +4,7 @@
   --color-primary: #745246;
   --color-primary-30: #7452464d;
   --color-secondary: #5e7a86;
+  --color-border: #eeeeee;
 }
 
 html,
@@ -15,7 +16,7 @@ body {
     radial-gradient(var(--color-primary-30) 1px, transparent 1px);
   background-position: 0 0, 25px 25px;
   background-size: 50px 50px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 a {

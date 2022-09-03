@@ -7,7 +7,7 @@
 
 .header {
   align-items: center;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--color-border);
   display: flex;
   height: 49px;
 }
@@ -30,7 +30,7 @@
 }
 
 .nav {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--color-border);
   height: 49px;
   width: 100%;
 }
