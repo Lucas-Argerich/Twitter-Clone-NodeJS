@@ -15,17 +15,13 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    user && router.replace('./home')
+    user && router.replace('/home')
   }, [user])
 
   const handleGitHubLogin = () => {
-    loginWithGitHub()
-      .then((user) => {
-        setUser(user)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+    loginWithGitHub().catch((err) => {
+      console.log(err)
+    })
   }
 
   return (
