@@ -4,9 +4,10 @@ import styles from 'styles/Home.module.css'
 import GitHubIcon from 'components/Icons/GitHub'
 import onUserStateChanged from '../firebase/onUserStateChanged'
 import loginWithGitHub from '../firebase/loginWithGitHub'
-import Avatar from 'components/Avatar'
+import { useRouter } from 'next/router'
 
 export default function Home() {
+  const router = useRouter()
   const [user, setUser] = useState(undefined)
 
   useEffect(() => {
@@ -14,7 +15,7 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    console.log(user)
+    user && router.replace('./home')
   }, [user])
 
   const handleGitHubLogin = () => {
@@ -41,11 +42,6 @@ export default function Home() {
           Login with GitHub
           <GitHubIcon />
         </Button>
-      )}
-      {user !== undefined && user !== null && (
-        <>
-          <Avatar src={user.avatar} alt={user.username} text={user.username} />
-        </>
       )}
     </section>
   )
