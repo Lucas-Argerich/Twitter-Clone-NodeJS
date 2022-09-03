@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import GitHubIcon from '../components/Icons/GitHub'
 import onUserStateChanged from '../firebase/onUserStateChanged'
 import loginWithGitHub from '../firebase/loginWithGitHub'
+import Avatar from '../components/Avatar'
 
 export default function Home() {
   const [user, setUser] = useState(undefined)
@@ -42,7 +43,9 @@ export default function Home() {
         </Button>
       )}
       {user !== undefined && user !== null && (
-        <h3>Welcome, {user.displayName || 'User'}</h3>
+        <>
+          <Avatar src={user.avatar} alt={user.username} text={user.username} />
+        </>
       )}
     </section>
   )
