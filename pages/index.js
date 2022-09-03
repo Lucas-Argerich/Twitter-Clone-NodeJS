@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
-import Button from '../components/Button'
-import styles from '../styles/Home.module.css'
-import GitHubIcon from '../components/Icons/GitHub'
+import Button from 'components/Button'
+import styles from 'styles/Home.module.css'
+import GitHubIcon from 'components/Icons/GitHub'
 import onUserStateChanged from '../firebase/onUserStateChanged'
 import loginWithGitHub from '../firebase/loginWithGitHub'
-import Avatar from '../components/Avatar'
+import Avatar from 'components/Avatar'
 
 export default function Home() {
   const [user, setUser] = useState(undefined)

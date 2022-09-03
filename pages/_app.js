@@ -1,6 +1,6 @@
-import '../styles/globals.css'
+import 'styles/globals.css'
 import Head from 'next/head'
-import AppLayout from '../containers/AppLayout'
+import AppLayout from 'containers/AppLayout'
 import '../firebase/client'
 
 function App({ Component, pageProps }) {
