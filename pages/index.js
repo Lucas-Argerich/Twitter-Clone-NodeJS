@@ -43,6 +43,9 @@ export default function Home() {
           <GitHubIcon />
         </Button>
       )}
+      {user === undefined && (
+        <img src="/spinner.gif" alt="Loading" width="100px" />
+      )}
     </section>
   )
 }
