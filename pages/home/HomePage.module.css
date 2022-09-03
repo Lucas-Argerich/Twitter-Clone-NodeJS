@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: inherit;
+}
+
+.header {
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  height: 49px;
+}
+
+.section {
+  flex: 1;
+  overflow: hidden scroll;
+}
+
+.nav {
+  border-top: 1px solid #ccc;
+  height: 49px;
+  width: 100%;
+}
