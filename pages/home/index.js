@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <h2>Inicio</h2>
+        <h2 className={styles.h2}>Inicio</h2>
       </header>
       <section className={styles.section}>
         {timeline.map((data) => {

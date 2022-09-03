@@ -12,6 +12,10 @@
   height: 49px;
 }
 
+.h2 {
+  margin-left: 15px;
+}
+
 .section {
   flex: 1;
   overflow: hidden scroll;
