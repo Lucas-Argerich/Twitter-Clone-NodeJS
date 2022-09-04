@@ -16,11 +16,11 @@
   font-weight: 600;
 }
 
-.username {
+.userName {
   font-size: 15px;
 }
 
-.message {
+.content {
   font-size: 15px;
   line-height: 20px;
 }
