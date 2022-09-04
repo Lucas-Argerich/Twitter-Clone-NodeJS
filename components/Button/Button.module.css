@@ -13,6 +13,7 @@
   margin-top: 16px;
   padding: 14px;
   transition: 200ms;
+  user-select: none;
 }
 
 .button:hover,
@@ -21,4 +22,9 @@
   background: transparent;
   color: var(--color-primary);
   fill: var(--color-primary);
+}
+
+.button[disabled] {
+  pointer-events: none;
+  opacity: 0.3;
 }
