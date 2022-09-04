@@ -1,4 +1,5 @@
 import Avatar from 'components/Avatar'
+import useTimeAgo from 'hooks/useTimeAgo'
 import styles from './Thunder.module.css'
 
 export default function Thunder({
@@ -8,6 +9,7 @@ export default function Thunder({
   content,
   createdAt,
 }) {
+  const timeAgo = useTimeAgo(createdAt)
   return (
     <article className={styles.article}>
       <Avatar src={avatar} alt={userName} />
@@ -17,7 +19,7 @@ export default function Thunder({
           {/* temporary */}
           <span className={styles.userName}>@{userName}</span>
           <span> · </span>
-          <time className={styles.time}>{createdAt}</time>
+          <time className={styles.time}>{timeAgo}</time>
         </div>
         <span className={styles.content}>{content}</span>
       </section>
