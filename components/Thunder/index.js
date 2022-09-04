@@ -16,6 +16,7 @@ export default function Thunder({
           <span className={styles.name}>{name || 'Lucas Argerich'}</span>{' '}
           {/* temporary */}
           <span className={styles.userName}>@{userName}</span>
+          <span> · </span>
           <time className={styles.time}>{createdAt}</time>
         </div>
         <span className={styles.content}>{content}</span>

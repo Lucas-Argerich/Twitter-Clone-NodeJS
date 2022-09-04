@@ -8,6 +8,7 @@
 }
 
 .header {
+  align-items: center;
   display: flex;
   gap: 4px;
 }
@@ -29,6 +30,6 @@
 }
 
 .time {
-  color: var(--font-secondary);
-  margin-left: auto;
+  color: var(--font-tertiary);
+  font-size: 14px;
 }
