@@ -5,7 +5,9 @@
   --color-primary-30: #7452464d;
   --color-secondary: #5e7a86;
   --color-border: #eeeeee;
-  --font-primary: #2b2b2b;
+  --font-primary: #222222;
+  --font-secondary: #444444;
+  --font-tertiary: #666666;
 }
 
 html,
@@ -18,7 +20,7 @@ body {
   background-position: 0 0, 25px 25px;
   background-size: 50px 50px;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--font-primary);
 }
 

@@ -13,11 +13,12 @@
 
 .name {
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .userName {
   font-size: 15px;
+  color: var(--font-tertiary);
 }
 
 .content {

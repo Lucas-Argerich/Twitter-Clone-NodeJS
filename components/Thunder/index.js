@@ -7,7 +7,8 @@ export default function Thunder({ userName, avatar, name, content }) {
       <Avatar src={avatar} alt={userName} />
       <section>
         <div className={styles.header}>
-          {name && <span className={styles.name}>{name}</span>}
+          <span className={styles.name}>{name || 'Lucas Argerich'}</span>{' '}
+          {/* temporary */}
           <span className={styles.userName}>@{userName}</span>
         </div>
         <span className={styles.content}>{content}</span>
