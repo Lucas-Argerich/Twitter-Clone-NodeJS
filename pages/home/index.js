@@ -18,18 +18,21 @@ export default function HomePage() {
         <h2 className={styles.h2}>Inicio</h2>
       </header>
       <section className={styles.section}>
-        {timeline.map(({ id, userName, name, avatar, content, userId }) => {
-          return (
-            <Thunder
-              key={id}
-              userName={userName}
-              avatar={avatar}
-              name={name}
-              content={content}
-              userId={userId}
-            />
-          )
-        })}
+        {timeline.map(
+          ({ avatar, content, createdAt, id, name, userId, userName }) => {
+            return (
+              <Thunder
+                avatar={avatar}
+                content={content}
+                createdAt={createdAt}
+                key={id}
+                name={name}
+                userId={userId}
+                userName={userName}
+              />
+            )
+          }
+        )}
       </section>
       <nav className={styles.nav}></nav>
     </div>
