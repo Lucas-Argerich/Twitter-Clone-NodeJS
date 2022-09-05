@@ -3,6 +3,10 @@ import fetchLatestThunders from '../../firebase/fetchLatestThunders'
 import useUser from 'hooks/useUser'
 import { useEffect, useState } from 'react'
 import styles from './HomePage.module.css'
+import Link from 'next/link'
+import Create from 'components/Icons/Create'
+import Search from 'components/Icons/Search'
+import Home from 'components/Icons/Home'
 
 export default function HomePage() {
   const [timeline, setTimeline] = useState([])
@@ -34,7 +38,23 @@ export default function HomePage() {
           }
         )}
       </section>
-      <nav className={styles.nav}></nav>
+      <nav className={styles.nav}>
+        <Link href="/home">
+          <a>
+            <Home className={styles.icon} />
+          </a>
+        </Link>
+        <Link href="/explore">
+          <a>
+            <Search className={styles.icon} />
+          </a>
+        </Link>
+        <Link href="/compose/thunder">
+          <a>
+            <Create className={styles.icon} />
+          </a>
+        </Link>
+      </nav>
     </div>
   )
 }
