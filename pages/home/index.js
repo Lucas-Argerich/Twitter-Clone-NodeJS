@@ -3,10 +3,8 @@ import fetchLatestThunders from '../../firebase/fetchLatestThunders'
 import useUser from 'hooks/useUser'
 import { useEffect, useState } from 'react'
 import styles from './HomePage.module.css'
-import Link from 'next/link'
-import Create from 'components/Icons/Create'
-import Search from 'components/Icons/Search'
-import Home from 'components/Icons/Home'
+import NavBar from 'components/NavBar'
+import Header from 'components/Header'
 
 export default function HomePage() {
   const [timeline, setTimeline] = useState([])
@@ -18,9 +16,7 @@ export default function HomePage() {
 
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
-        <h2 className={styles.h2}>Inicio</h2>
-      </header>
+      <Header />
       <section className={styles.section}>
         {timeline.map(
           ({ avatar, content, createdAt, id, name, userId, userName }) => {
@@ -38,23 +34,7 @@ export default function HomePage() {
           }
         )}
       </section>
-      <nav className={styles.nav}>
-        <Link href="/home">
-          <a>
-            <Home className={styles.icon} />
-          </a>
-        </Link>
-        <Link href="/explore">
-          <a>
-            <Search className={styles.icon} />
-          </a>
-        </Link>
-        <Link href="/compose/thunder">
-          <a>
-            <Create className={styles.icon} />
-          </a>
-        </Link>
-      </nav>
+      <NavBar />
     </div>
   )
 }

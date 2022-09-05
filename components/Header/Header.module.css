@@ -1,0 +1,13 @@
+.header {
+  align-items: center;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  height: 49px;
+  overflow: hidden;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.img {
+  height: 35px;
+}
