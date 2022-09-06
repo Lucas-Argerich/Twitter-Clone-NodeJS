@@ -11,10 +11,14 @@ const DRAG_IMAGE_STATES = {
   ERROR: -1,
 }
 
-export default function DragImage({ children }) {
+export default function DragImage({ children, handleImage }) {
   const [drag, setDrag] = useState(DRAG_IMAGE_STATES.NONE)
   const [task, setTask] = useState(null)
   const [imgURL, setImgURL] = useState(null)
+
+  useEffect(() => {
+    imgURL && handleImage(imgURL)
+  }, [imgURL])
 
   useEffect(() => {
     console.log(task)

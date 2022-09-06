@@ -15,11 +15,16 @@ const COMPOSE_STATES = {
 export default function PostThunderPage() {
   const [message, setMessage] = useState('')
   const [status, setStatus] = useState(COMPOSE_STATES.USER_NOT_KNOWN)
+  const [imgURL, setImgURL] = useState(null)
   const router = useRouter()
   const user = useUser()
 
   const handleChange = (e) => {
     setMessage(e.target.value)
+  }
+
+  const handleImage = (url) => {
+    setImgURL(url)
   }
 
   const handleSubmit = (e) => {
@@ -28,6 +33,7 @@ export default function PostThunderPage() {
     addThunder({
       avatar: user.avatar,
       content: message,
+      img: imgURL,
       uid: user.uid,
       username: user.username,
     })
@@ -45,7 +51,7 @@ export default function PostThunderPage() {
   return (
     <>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <DragImage>
+        <DragImage handleImage={handleImage}>
           <textarea
             className={styles.textarea}
             placeholder="¿Qué esta pasando?"
