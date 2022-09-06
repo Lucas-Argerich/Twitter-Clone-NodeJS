@@ -19,12 +19,13 @@ export default function HomePage() {
       <Header />
       <section className={styles.section}>
         {timeline.map(
-          ({ avatar, content, createdAt, id, name, userId, userName }) => {
+          ({ avatar, content, createdAt, id, img, name, userId, userName }) => {
             return (
               <Thunder
                 avatar={avatar}
                 content={content}
                 createdAt={createdAt}
+                img={img}
                 key={id}
                 name={name}
                 userId={userId}

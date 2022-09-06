@@ -3,11 +3,12 @@ import useTimeAgo from 'hooks/useTimeAgo'
 import styles from './Thunder.module.css'
 
 export default function Thunder({
-  userName,
   avatar,
-  name,
   content,
   createdAt,
+  img,
+  name,
+  userName,
 }) {
   const timeAgo = useTimeAgo(createdAt)
   return (
@@ -22,6 +23,7 @@ export default function Thunder({
           <time className={styles.time}>{timeAgo}</time>
         </div>
         <span className={styles.content}>{content}</span>
+        {img && <img className={styles.img} src={img} />}
       </section>
     </article>
   )
