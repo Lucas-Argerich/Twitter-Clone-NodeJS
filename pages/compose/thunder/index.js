@@ -5,6 +5,7 @@ import useUser from 'hooks/useUser'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import DragImage from 'components/DragImage'
+import Avatar from 'components/Avatar'
 
 const COMPOSE_STATES = {
   USER_NOT_KNOWN: 0,
@@ -49,7 +50,12 @@ export default function PostThunderPage() {
   const isButtonDisabled = !message.length || status === COMPOSE_STATES.LOADING
 
   return (
-    <>
+    <section className={styles.formContainer}>
+      {user && (
+        <section className={styles.section}>
+          <Avatar src={user.avatar} alt={user.userName} />
+        </section>
+      )}
       <form className={styles.form} onSubmit={handleSubmit}>
         <DragImage handleImage={handleImage}>
           <textarea
@@ -62,6 +68,6 @@ export default function PostThunderPage() {
           <Button disabled={isButtonDisabled}>Thunder</Button>
         </div>
       </form>
-    </>
+    </section>
   )
 }
