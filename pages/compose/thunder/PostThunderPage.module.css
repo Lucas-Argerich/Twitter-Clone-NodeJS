@@ -1,6 +1,11 @@
+.form {
+  padding: 15px;
+}
+
 .textarea {
   border: none;
   font-size: 21px;
+  min-height: 150px;
   outline: 0;
   padding: 15px;
   resize: none;

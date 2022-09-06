@@ -4,6 +4,7 @@ import styles from './PostThunderPage.module.css'
 import useUser from 'hooks/useUser'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import DragImage from 'components/DragImage'
 
 const COMPOSE_STATES = {
   USER_NOT_KNOWN: 0,
@@ -43,12 +44,14 @@ export default function PostThunderPage() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <textarea
-          className={styles.textarea}
-          placeholder="¿Qué esta pasando?"
-          onChange={handleChange}
-        />
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <DragImage>
+          <textarea
+            className={styles.textarea}
+            placeholder="¿Qué esta pasando?"
+            onChange={handleChange}
+          />
+        </DragImage>
         <div className={styles.button}>
           <Button disabled={isButtonDisabled}>Thunder</Button>
         </div>
