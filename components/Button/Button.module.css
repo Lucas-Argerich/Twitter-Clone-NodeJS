@@ -1,7 +1,7 @@
 .button {
   align-items: center;
   background: var(--color-primary);
-  border-radius: 5px;
+  border-radius: 10px;
   border: var(--color-primary) solid 1px;
   color: #ffffff;
   cursor: pointer;
