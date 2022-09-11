@@ -1,0 +1,47 @@
+.section {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  padding-right: 25px;
+  width: 100%;
+}
+
+.div {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.div header {
+  padding: 15px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.div header button {
+  background-color: var(--font-dark);
+  border-radius: 50%;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: grid;
+  height: 29px;
+  text-align: center;
+  opacity: 0.5;
+  place-items: center;
+  transition: 100ms;
+  width: 29px;
+}
+
+.div header button:hover {
+  opacity: 0.75;
+}
+
+.img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: inherit;
+}

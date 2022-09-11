@@ -4,14 +4,14 @@ import { collection, addDoc, Timestamp } from 'firebase/firestore'
 export default async function addThunder({
   avatar,
   content,
-  img,
+  images,
   uid,
   username,
 }) {
   return await addDoc(collection(db, 'thunders'), {
     avatar,
     content,
-    img,
+    images,
     userId: uid,
     userName: username,
     createdAt: Timestamp.fromDate(new Date()),

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import uploadImage from '../../firebase/uploadImage'
 import { getDownloadURL } from 'firebase/storage'
 import styles from './DragImage.module.css'
+import ImageDisplay from 'components/ImageDisplay'
 
 const DRAG_IMAGE_STATES = {
   NONE: 0,
@@ -11,17 +12,17 @@ const DRAG_IMAGE_STATES = {
   ERROR: -1,
 }
 
-export default function DragImage({ children, handleImage }) {
+export default function DragImage({ children, handleImageArr }) {
   const [drag, setDrag] = useState(DRAG_IMAGE_STATES.NONE)
   const [task, setTask] = useState(null)
-  const [imgURL, setImgURL] = useState(null)
+  const [arrImgs, setArrImgs] = useState(null)
 
   useEffect(() => {
-    imgURL && handleImage(imgURL)
-  }, [imgURL])
+    console.log(arrImgs)
+    arrImgs && handleImageArr(arrImgs)
+  }, [arrImgs])
 
   useEffect(() => {
-    console.log(task)
     if (task) {
       const onProgress = () => {
         console.log('on progress')
@@ -30,8 +31,13 @@ export default function DragImage({ children, handleImage }) {
         console.log(err)
       }
       const onComplete = () => {
-        console.log('on complete')
-        getDownloadURL(task.snapshot.ref).then(setImgURL)
+        console.log(task.snapshot)
+        const image = {
+          ref: task.snapshot.ref,
+          metadata: task.snapshot.metadata,
+        }
+        getDownloadURL(task.snapshot.ref).then((url) => (image.url = url))
+        handleUploadedImage(image)
         setDrag(DRAG_IMAGE_STATES.COMPLETE)
       }
       task.on('state_changed', onProgress, onError, onComplete)
@@ -58,6 +64,10 @@ export default function DragImage({ children, handleImage }) {
     setTask(task)
   }
 
+  const handleUploadedImage = (image) => {
+    !arrImgs ? setArrImgs([image]) : setArrImgs([...arrImgs, image])
+  }
+
   const borderDefault = {
     border: '3px solid transparent',
   }
@@ -67,8 +77,8 @@ export default function DragImage({ children, handleImage }) {
   }
 
   return (
-    <div
-      className={styles.div}
+    <section
+      className={styles.section}
       onDragEnter={handleDragEnter}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
@@ -77,12 +87,9 @@ export default function DragImage({ children, handleImage }) {
       }
     >
       {children}
-      {imgURL && (
-        <section className={styles.section}>
-          <img className={styles.img} src={imgURL} />
-          <div className={styles.shadow}></div>
-        </section>
+      {arrImgs && (
+        <ImageDisplay arrImgs={arrImgs} setArrImgs={setArrImgs} buttons />
       )}
-    </div>
+    </section>
   )
 }

@@ -33,9 +33,3 @@
   color: var(--font-tertiary);
   font-size: 14px;
 }
-
-.img {
-  width: 100%;
-  border-radius: 10px;
-  margin-top: 10px;
-}
